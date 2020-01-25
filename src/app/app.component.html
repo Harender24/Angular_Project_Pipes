@@ -1,10 +1,53 @@
-<div>
-  <label for="PayeeName">Payee Name</label>
-  <input
-    type="text"
-    name="PayeeName"
-    id="PayeeName"
-    (input)="onChange($event.target.value)"
-  />
+<div class="container">
+  <h3>Payment Form</h3>
+  <div class="row">
+    <div class="form-group col">
+      <label for="PayeeName">Payee Name</label>
+      <input
+        class="form-control"
+        type="text"
+        name="PayeeName"
+        id="PayeeName"
+        (input)="onChange($event.target.value)"
+      />
+    </div>
+    <div class="col">
+      <label><b>Name:</b></label>
+      <div>
+        {{ inputValue | titlecase }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label>Payment Date</label>
+      <input
+        class="form-control"
+        type="date"
+        (input)="onChangeDate($event.target.value)"
+      />
+    </div>
+    <div class="col">
+      <label><b>Date:</b></label>
+      <div>
+        {{ inputDate | date: "MMMM dd, yyyy" }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label>Payment Currency</label>
+      <input
+        class="form-control"
+        type="number"
+        (input)="onChangeCurrency($event.target.value)"
+      />
+    </div>
+    <div class="col">
+      <label><b>Currency:</b></label>
+      <div>
+        {{ inputCurrency | currency: "INR" }}
+      </div>
+    </div>
+  </div>
 </div>
-{{ inputValue }}

@@ -7,7 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   inputValue: string = '';
+  inputDate: any = '';
+  inputCurrency: string = '';
   onChange(value: string) {
     this.inputValue = value;
+  }
+  onChangeDate(value: any) {
+    this.inputDate = value;
+  }
+  onChangeCurrency(value: string) {
+    this.inputCurrency = value;
   }
 }
