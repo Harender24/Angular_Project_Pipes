@@ -9,6 +9,7 @@ export class AppComponent {
   inputValue: string = '';
   inputDate: any = '';
   inputCurrency: string = '';
+  inputMiles: number;
   onChange(value: string) {
     this.inputValue = value;
   }
@@ -17,5 +18,8 @@ export class AppComponent {
   }
   onChangeCurrency(value: string) {
     this.inputCurrency = value;
+  }
+  onChangeMiles(value: number) {
+    this.inputMiles = value;
   }
 }
